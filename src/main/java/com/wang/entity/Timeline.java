@@ -2,6 +2,7 @@ package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name="t_timeline")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
@@ -30,46 +32,5 @@ public class Timeline {
 	
 	@Column(length=200)
 	private String content;  // 内容
-	
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	public String getMonth() {
-		return month;
-	}
-
-	public void setMonth(String month) {
-		this.month = month;
-	}
-
-	public Integer getTimelineId() {
-		return timelineId;
-	}
-
-	public void setTimelineId(Integer timelineId) {
-		this.timelineId = timelineId;
-	}
-
-	@JsonSerialize(using=CustomDateTimeSerializer.class)
-	public Date getPublishDate() {
-		return publishDate;
-	}
-
-	public void setPublishDate(Date publishDate) {
-		this.publishDate = publishDate;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
 	
 }

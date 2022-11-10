@@ -13,3 +13,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+MD5Salt: wyt
+imageFilePath: E:\\study_project\\SharedLife\\src\\main\\webapp\\static\\images\\
+downloadImagePath: E:\\study_project\\SharedLife\\src\\main\\webapp
+lucenePath: E:\\study_project\\SharedLife\\lucene

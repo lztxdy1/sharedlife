@@ -1,6 +1,7 @@
 package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotEmpty;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name="t_classify")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
@@ -23,21 +25,5 @@ public class Classify {
 	@NotEmpty(message="文章类别名称不能为空")
 	@Column(length=200)
 	private String classifyName;  //类别名称
-
-	public Integer getClassifyId() {
-		return classifyId;
-	}
-
-	public void setClassifyId(Integer classifyId) {
-		this.classifyId = classifyId;
-	}
-
-	public String getClassifyName() {
-		return classifyName;
-	}
-
-	public void setClassifyName(String classifyName) {
-		this.classifyName = classifyName;
-	}
 	
 }

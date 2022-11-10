@@ -2,6 +2,7 @@ package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name="t_notice")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
@@ -27,38 +29,5 @@ public class Notice {
 	
 	@Column(length=200)
 	private Integer grade;  // 等级  0 重要  1 一般
-
-	public Integer getNoticeId() {
-		return noticeId;
-	}
-
-	public void setNoticeId(Integer noticeId) {
-		this.noticeId = noticeId;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	@JsonSerialize(using=CustomDateTimeSerializer.class)
-	public Date getPublishDate() {
-		return publishDate;
-	}
-
-	public void setPublishDate(Date publishDate) {
-		this.publishDate = publishDate;
-	}
-
-	public Integer getGrade() {
-		return grade;
-	}
-
-	public void setGrade(Integer grade) {
-		this.grade = grade;
-	}
 
 }

@@ -2,6 +2,7 @@ package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name = "t_user")
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler", "fieldHandler" })
@@ -52,119 +54,5 @@ public class User {
   private String userIds;// 关注的用户id
 
   private String momo;// 备注
-
-  public Integer getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Integer userId) {
-    this.userId = userId;
-  }
-
-  public String getOpenId() {
-    return openId;
-  }
-
-  public void setOpenId(String openId) {
-    this.openId = openId;
-  }
-
-  public String getNickname() {
-    return nickname;
-  }
-
-  public void setNickname(String nickname) {
-    this.nickname = nickname;
-  }
-
-  public String getHeadPortrait() {
-    return headPortrait;
-  }
-
-  public void setHeadPortrait(String headPortrait) {
-    this.headPortrait = headPortrait;
-  }
-
-  public String getSex() {
-    return sex;
-  }
-
-  public void setSex(String sex) {
-    this.sex = sex;
-  }
-
-  @JsonSerialize(using = CustomDateTimeSerializer.class)
-  public Date getRegistrationDate() {
-    return registrationDate;
-  }
-
-  public void setRegistrationDate(Date registrationDate) {
-    this.registrationDate = registrationDate;
-  }
-
-  @JsonSerialize(using = CustomDateTimeSerializer.class)
-  public Date getLatelyLoginTime() {
-    return latelyLoginTime;
-  }
-
-  public void setLatelyLoginTime(Date latelyLoginTime) {
-    this.latelyLoginTime = latelyLoginTime;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public String getPhone() {
-    return phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
-
-  public java.sql.Date getBirthday() {
-    return birthday;
-  }
-
-  public void setBirthday(java.sql.Date birthday) {
-    this.birthday = birthday;
-  }
-
-  public String getArticleIds() {
-    return articleIds;
-  }
-
-  public void setArticleIds(String articleIds) {
-    this.articleIds = articleIds;
-  }
-
-  public String getUserIds() {
-    return userIds;
-  }
-
-  public void setUserIds(String userIds) {
-    this.userIds = userIds;
-  }
-
-  public String getMomo() {
-    return momo;
-  }
-
-  public void setMomo(String momo) {
-    this.momo = momo;
-  }
 
 }

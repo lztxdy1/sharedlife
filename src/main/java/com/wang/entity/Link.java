@@ -1,6 +1,7 @@
 package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name="t_link")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
@@ -28,45 +30,5 @@ public class Link {
 	private String linkEmail;  // 联系人邮箱
 	
 	private Integer orderNum;  // 排序
-
-	public Integer getLinkId() {
-		return linkId;
-	}
-
-	public void setLinkId(Integer linkId) {
-		this.linkId = linkId;
-	}
-
-	public String getLinkName() {
-		return linkName;
-	}
-
-	public void setLinkName(String linkName) {
-		this.linkName = linkName;
-	}
-
-	public String getLinkUrl() {
-		return linkUrl;
-	}
-
-	public void setLinkUrl(String linkUrl) {
-		this.linkUrl = linkUrl;
-	}
-
-	public String getLinkEmail() {
-		return linkEmail;
-	}
-
-	public void setLinkEmail(String linkEmail) {
-		this.linkEmail = linkEmail;
-	}
-
-	public Integer getOrderNum() {
-		return orderNum;
-	}
-
-	public void setOrderNum(Integer orderNum) {
-		this.orderNum = orderNum;
-	}
 	
 }

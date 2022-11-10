@@ -1,6 +1,7 @@
 package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name="t_music")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
@@ -29,46 +31,5 @@ public class Music {
 	
 	@Column(length=500)
 	private String cover;  // 封面地址
-
-	public Integer getMusicId() {
-		return musicId;
-	}
-
-	public void setMusicId(Integer musicId) {
-		this.musicId = musicId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getArtist() {
-		return artist;
-	}
-
-	public void setArtist(String artist) {
-		this.artist = artist;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getCover() {
-		return cover;
-	}
-
-	public void setCover(String cover) {
-		this.cover = cover;
-	}
-	
 
 }

@@ -2,6 +2,7 @@ package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Date;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name = "t_article")
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler", "fieldHandler" })
@@ -53,110 +55,5 @@ public class Article {
 
   @Column
   private Integer userId;// 用户id
-
-  public Integer getArticleId() {
-    return articleId;
-  }
-
-  public void setArticleId(Integer articleId) {
-    this.articleId = articleId;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getContent() {
-    return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
-  }
-
-  @JsonSerialize(using = CustomDateTimeSerializer.class)
-  public Date getPublishDate() {
-    return publishDate;
-  }
-
-  public void setPublishDate(Date publishDate) {
-    this.publishDate = publishDate;
-  }
-
-  public String getAuthor() {
-    return author;
-  }
-
-  public void setAuthor(String author) {
-    this.author = author;
-  }
-
-  public Classify getClassify() {
-    return classify;
-  }
-
-  public void setClassify(Classify classify) {
-    this.classify = classify;
-  }
-
-  public Integer getClick() {
-    return click;
-  }
-
-  public void setClick(Integer click) {
-    this.click = click;
-  }
-
-  public Integer getCommentNum() {
-    return commentNum;
-  }
-
-  public void setCommentNum(Integer commentNum) {
-    this.commentNum = commentNum;
-  }
-
-  public Integer getIsTop() {
-    return isTop;
-  }
-
-  public void setIsTop(Integer isTop) {
-    this.isTop = isTop;
-  }
-
-  public Integer getIsOriginal() {
-    return isOriginal;
-  }
-
-  public void setIsOriginal(Integer isOriginal) {
-    this.isOriginal = isOriginal;
-  }
-
-  public String getImageName() {
-    return imageName;
-  }
-
-  public void setImageName(String imageName) {
-    this.imageName = imageName;
-  }
-
-  public String getContentNoTag() {
-    return contentNoTag;
-  }
-
-  public void setContentNoTag(String contentNoTag) {
-    this.contentNoTag = contentNoTag;
-  }
-
-  public Integer getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Integer userId) {
-    this.userId = userId;
-  }
 
 }

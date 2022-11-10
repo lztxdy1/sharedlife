@@ -2,6 +2,7 @@ package com.wang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
  * @author halo
  *
  */
+@Data
 @Entity
 @Table(name="t_reply")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
@@ -32,45 +34,4 @@ public class Reply {
 	private String content; // 回复内容
 	
 	private Date replyDate; // 回复时间
-
-	public Integer getReplyId() {
-		return replyId;
-	}
-
-	public void setReplyId(Integer replyId) {
-		this.replyId = replyId;
-	}
-
-	public Comment getComment() {
-		return comment;
-	}
-
-	public void setComment(Comment comment) {
-		this.comment = comment;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	@JsonSerialize(using=CustomDateTimeSerializer.class)
-	public Date getReplyDate() {
-		return replyDate;
-	}
-
-	public void setReplyDate(Date replyDate) {
-		this.replyDate = replyDate;
-	}
 }
