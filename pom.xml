@@ -7,6 +7,10 @@
     <groupId>com.wang</groupId>
     <artifactId>sharedLife</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>SharedLife</name>
+    <description>生活分享平台</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

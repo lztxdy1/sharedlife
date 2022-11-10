@@ -4,9 +4,9 @@ import com.wang.entity.Admin;
 import com.wang.repository.AdminRepository;
 import com.wang.service.AdminService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.transaction.Transactional;
 
 /**
  * 管理员Service实现类
@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService {
      */
     @Override
     public Admin findByUserNameAndPassword(String username, String password) {
-        return adminRepository.findByUserNameAndPassword(username, password);
+        return adminRepository.findByUsernameAndPassword(username, password);
     }
 
     /**

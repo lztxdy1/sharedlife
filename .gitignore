@@ -1,3 +1,5 @@
 .idea
 target
 .gitignore
+webapp
+src/main/resources/templates

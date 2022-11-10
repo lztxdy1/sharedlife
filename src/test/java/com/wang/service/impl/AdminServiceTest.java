@@ -37,6 +37,6 @@ public class AdminServiceTest {
 
     @Test
     public void findByUserNameAndPassword() {
-        System.out.println(adminService.findByUserNameAndPassword("xiaowang", "123456"));
+        System.out.println(adminService.findByUserNameAndPassword("halo", "123456"));
     }
 }
