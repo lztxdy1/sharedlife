@@ -13,6 +13,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  thymeleaf:
+    cache: false
 
 MD5Salt: wyt
 imageFilePath: E:\\study_project\\SharedLife\\src\\main\\webapp\\static\\images\\

@@ -89,4 +89,10 @@ public interface UserService {
      */
     public List<User> findByListId(List<Integer> userList);
 
+    /**
+     * 获取总用户数
+     * @return
+     */
+    public Long getCount();
+
 }

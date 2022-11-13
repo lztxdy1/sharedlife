@@ -10,6 +10,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  */
 public interface AdminRepository extends JpaRepository<Admin, Integer>, JpaSpecificationExecutor<Admin> {
 
-    public Admin findByUsernameAndPassword(String username, String password);
+    public Admin findByUserNameAndPassword(String username, String password);
 
 }

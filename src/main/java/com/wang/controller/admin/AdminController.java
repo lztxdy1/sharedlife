@@ -2,7 +2,11 @@ package com.wang.controller.admin;
 
 import com.wang.constant.ErrorConstant;
 import com.wang.entity.Admin;
+import com.wang.entity.User;
 import com.wang.service.AdminService;
+import com.wang.service.ArticleService;
+import com.wang.service.ClassifyService;
+import com.wang.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +31,11 @@ public class AdminController {
     @Resource
     private AdminService adminService;
     @Resource
-
+    private UserService userService;
+    @Resource
+    private ArticleService articleService;
+    @Resource
+    private ClassifyService classifyService;
     /**
      * 后台管理员登录
      * @param admin
@@ -46,8 +54,28 @@ public class AdminController {
                 mav.setViewName("/login");
             } else {
                 session.setAttribute("adminUser", resultAdmin);
+                // 统计用户信息
+                Long userCount = userService.getCount();
 
+                // 统计今日注册
+                Long todayRegistrationCount = userService.getTodayRegisterCount(new User(), "1", "1");
+
+                // 统计今日登录数
+                Long todayLoginCount = userService.getUserCount(new User(), "1", "1");
+
+                // 博客总数
+                Long articleCount = articleService.getCount();
+
+                // 统计博客分类
+                Long classifyCount = classifyService.getCount();
+
+                session.setAttribute("userCount", userCount);
+                session.setAttribute("todayRegistrationCount", todayRegistrationCount);
+                session.setAttribute("todayLoginCount", todayLoginCount);
+                session.setAttribute("articleCount", articleCount);
+                session.setAttribute("classifyCount", classifyCount);
                 mav.addObject("success", true);
+
                 mav.setViewName("/admin/index");
             }
         } catch (Exception e) { // 用户名或密码错误

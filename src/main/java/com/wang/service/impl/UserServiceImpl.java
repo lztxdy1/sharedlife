@@ -40,6 +40,16 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * 获取总用户数
+     *
+     * @return
+     */
+    @Override
+    public Long getCount() {
+        return userRepository.count();
+    }
+
+    /**
      * 分页查询用户
      *
      * @param user
@@ -182,11 +192,11 @@ public class UserServiceImpl implements UserService {
         Long count = userRepository.count((Specification<User>) (root, query, cb) -> {
             Predicate predicate = cb.conjunction();
             if (StringUtil.isNotEmpty(s_bRegistrationDate)) {
-                predicate.getExpressions().add(cb.greaterThanOrEqualTo(root.get("latelyLoginDate").as(LocalDateTime.class),
+                predicate.getExpressions().add(cb.greaterThanOrEqualTo(root.get("latelyLoginTime").as(LocalDateTime.class),
                         LocalDate.now().atTime(0, 0, 0)));
             }
             if (StringUtil.isNotEmpty(s_eRegistrationDate)) {
-                predicate.getExpressions().add(cb.lessThanOrEqualTo(root.get("latelyLoginDate").as(LocalDateTime.class),
+                predicate.getExpressions().add(cb.lessThanOrEqualTo(root.get("latelyLoginTime").as(LocalDateTime.class),
                         LocalDate.now().atTime(23, 59, 59)));
             }
 

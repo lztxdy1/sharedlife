@@ -30,7 +30,7 @@ public class AdminServiceImpl implements AdminService {
      */
     @Override
     public Admin findByUserNameAndPassword(String username, String password) {
-        return adminRepository.findByUsernameAndPassword(username, password);
+        return adminRepository.findByUserNameAndPassword(username, password);
     }
 
     /**
