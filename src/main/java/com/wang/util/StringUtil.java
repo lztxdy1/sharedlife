@@ -4,8 +4,7 @@ import java.util.regex.Pattern;
 
 /**
  * 字符串工具类
-* @ClassName: StringUtil 
-* @author halo
+* @ClassName: StringUtil
 *
  */
 public class StringUtil {

@@ -1,6 +1,6 @@
 package com.wang.controller.admin;
 
-import com.wang.constant.ErrorConstant;
+import com.wang.constant.Constant;
 import com.wang.entity.Admin;
 import com.wang.entity.User;
 import com.wang.service.AdminService;
@@ -50,7 +50,7 @@ public class AdminController {
         try {
             Admin resultAdmin = adminService.findByUserNameAndPassword(admin.getUserName(), admin.getPassword());
             if (resultAdmin == null) {
-                mav.addObject("errorInfo", ErrorConstant.loginErrorInfo);
+                mav.addObject("errorInfo", Constant.LOGIN_ERROR_INFO);
                 mav.setViewName("/login");
             } else {
                 session.setAttribute("adminUser", resultAdmin);
@@ -81,7 +81,7 @@ public class AdminController {
         } catch (Exception e) { // 用户名或密码错误
             e.printStackTrace();
             mav.addObject("admin", admin);
-            mav.addObject("errorInfo", ErrorConstant.loginErrorInfo);
+            mav.addObject("errorInfo", Constant.LOGIN_ERROR_INFO);
             mav.setViewName("/login");
         }
 
