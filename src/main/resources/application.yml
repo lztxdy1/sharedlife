@@ -17,6 +17,6 @@ spring:
     cache: false
 
 MD5Salt: wyt
-imageFilePath: E:\\study_project\\SharedLife\\src\\main\\webapp\\static\\images\\
-downloadImagePath: E:\\study_project\\SharedLife\\src\\main\\webapp
-lucenePath: E:\\study_project\\SharedLife\\lucene
+imageFilePath: P:\\MyProject\\working\\sharedlife\\src\\main\\webapp\\static\\images\\
+downloadImagePath: P:\\MyProject\\working\\sharedlife\\src\\main\\webapp
+lucenePath: P:\\MyProject\\working\\sharedlife\\lucene

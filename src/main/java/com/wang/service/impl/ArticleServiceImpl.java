@@ -148,7 +148,7 @@ public class ArticleServiceImpl implements ArticleService {
                 return predicate;
             }
         });
-        return null;
+        return count;
     }
 
     /**

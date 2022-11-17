@@ -19,7 +19,7 @@ public interface ArticleRepository extends JpaRepository<Article, Integer>, JpaS
      * @param n
      * @return
      */
-    @Query(value = "select * from t_article order by click desc limit 0, ?1", nativeQuery = true)
+    @Query(value = "select * from t_article order by click desc limit 0,?1", nativeQuery = true)
     public List<Article> getClickArticle(Integer n);
 
 
@@ -29,7 +29,7 @@ public interface ArticleRepository extends JpaRepository<Article, Integer>, JpaS
      * @return 
      * 
      */
-    @Query(value = "select * from t_article where is_top=1 and is_orignal=1 order by publish_date desc limit 0, ?1;", nativeQuery = true)
+    @Query(value = "select * from t_article where is_top=1 and is_original=1 order by publish_date desc limit 0,?1", nativeQuery = true)
     public List<Article> getRecommendArticle(Integer n);
 
     /**
