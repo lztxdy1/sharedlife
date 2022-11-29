@@ -25,11 +25,11 @@ public interface ClassifyService {
     public Long getCount();
 
     /**
-     * 根据文章id查询类别
-     * @param articleId
+     * 根据id查询文章类别
+     * @param classifyId
      * @return
      */
-    public Classify findByArticleId(Integer articleId);
+    public Classify findByClassifyId(Integer classifyId);
 
     /**
      * 添加或修改分类

@@ -47,12 +47,12 @@ public class ClassifyServiceImpl implements ClassifyService {
     /**
      * 根据文章id查询类别
      *
-     * @param articleId
+     * @param classifyId
      * @return
      */
     @Override
-    public Classify findByArticleId(Integer articleId) {
-        return classifyRepository.getOne(articleId);
+    public Classify findByClassifyId(Integer classifyId) {
+        return classifyRepository.getOne(classifyId);
     }
 
     /**

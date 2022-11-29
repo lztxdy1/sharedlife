@@ -110,7 +110,7 @@ public class ArticleAdminController {
 
         int totalPage = (int) (total % pageSize == 0 ? total / pageSize : total / pageSize + 1); // 总页数
         resultMap.put("totalPage", totalPage);
-        resultMap.put("error", 0);
+        resultMap.put("errorNo", 0);
 
         if (p != null && p == 2) {
             resultMap.put("data", articleList);
@@ -146,7 +146,7 @@ public class ArticleAdminController {
         tempMap.put("classify", article.getClassify());
         tempMap.put("imageName", article.getImageName());
 
-        resultMap.put("error", 0);
+        resultMap.put("errorNo", 0);
         resultMap.put("data", tempMap);
         return resultMap;
     }
@@ -188,7 +188,7 @@ public class ArticleAdminController {
         } else if (Constant.EDIT_ARTICLE.equals(mode)) {
             articleIndex.updateIndex(article);
         }
-        resultMap.put("error", 0);
+        resultMap.put("errorNo", 0);
         resultMap.put("data", 1);
         startupRunner.loadData();
         return resultMap;
@@ -209,7 +209,7 @@ public class ArticleAdminController {
             articleService.delete(Integer.parseInt(idsStr[i]));
             articleIndex.deleteIndex(idsStr[i]);
         }
-        resultMap.put("error", 0);
+        resultMap.put("errorNo", 0);
         resultMap.put("data", 1);
         startupRunner.loadData();
         return resultMap;
