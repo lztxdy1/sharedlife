@@ -11,10 +11,7 @@ import com.wang.service.UserService;
 import com.wang.util.DateUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -235,6 +232,13 @@ public class ForegroundController {
         return resultMap;
     }
 
+    /**
+     * 下载图片
+     * @param response
+     * @param fileName
+     * @throws Exception
+     */
+    @RequestMapping(value = "/downloadImage", method = RequestMethod.GET)
     public void testDownload(HttpServletResponse response, String fileName) throws Exception {
         response.setHeader("content-type", "application/octet-stream");
         response.setContentType("application/octet-stream");

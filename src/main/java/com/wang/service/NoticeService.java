@@ -17,14 +17,14 @@ public interface NoticeService {
      * @param pageSize
      * @return
      */
-    public List<Notice> list(Notice notice, Integer page, Integer pageSize);
+    public List<Notice> list(Integer page, Integer pageSize);
 
     /**
      * 获取总记录数
      * @param notice
      * @return
      */
-    public Long getCount(Notice notice);
+    public Long getCount();
 
 
     /**

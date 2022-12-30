@@ -30,7 +30,7 @@ public class NoticeServiceImpl implements NoticeService {
      * @return
      */
     @Override
-    public List<Notice> list(Notice notice, Integer page, Integer pageSize) {
+    public List<Notice> list(Integer page, Integer pageSize) {
         return noticeRepository.findAll(PageRequest.of(page, pageSize, Sort.Direction.DESC, "publishDate")).getContent();
     }
 
@@ -41,7 +41,7 @@ public class NoticeServiceImpl implements NoticeService {
      * @return
      */
     @Override
-    public Long getCount(Notice notice) {
+    public Long getCount() {
         return noticeRepository.count();
     }
 
